@@ -1,0 +1,36 @@
+ca:
+  - eu
+  - fr
+  - simple
+en:
+  - ca
+  - es
+  - eu
+  - fr
+  - gl
+es:
+  - eu
+  - fr
+  - simple
+eu:
+  - ca
+  - es
+  - fr
+  - gl
+  - simple
+fr:
+  - ca
+  - es
+  - eu
+  - gl
+  - simple
+gl:
+  - eu
+  - fr
+  - simple
+simple:
+  - ca
+  - es
+  - eu
+  - fr
+  - gl
