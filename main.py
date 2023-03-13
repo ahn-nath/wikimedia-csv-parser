@@ -5,10 +5,10 @@ import pickle
 # define constants
 import re
 
-PATH = 'yaml_files'
+PATH = 'config_files'
 
-DENY_LIST = ['yaml_files/mt-defaults.wikimedia.yaml', 'yaml_files/MWPageLoader.yaml', 'yaml_files/languages.yaml',
-             'yaml_files/JsonDict.yaml', 'yaml_files/Dictd.yaml', 'yaml_files/transform.js']
+DENY_LIST = ['config_files/mt-defaults.wikimedia.yaml', 'config_files/MWPageLoader.yaml', 'config_files/languages.yaml',
+             'config_files/JsonDict.yaml', 'config_files/Dictd.yaml', 'config_files/transform.js']
 
 
 def get_preferred_engines():
@@ -32,7 +32,7 @@ def get_preferred_engines():
     # if it doesn't exist, create it
     except FileNotFoundError:
         # open file and read each line
-        with open('yaml_files/mt-defaults.wikimedia.yaml', 'r') as file:
+        with open('config_files/mt-defaults.wikimedia.yaml', 'r') as file:
             lines = file.readlines()
         # get the preferred engines
         preferred_engines = {}
@@ -61,12 +61,11 @@ def generate_csv(preferred_engines):
     """
     # parse each file
     # list for the lines of the CSV file
-
     csv_strings = ["source language,target language,translation engine,is preferred engine?"]
-    # for f in os.listdir('yaml_files'):
-    for f in os.listdir('yaml_files'):
+    # for f in os.listdir('config_files'):
+    for f in os.listdir('config_files'):
         # parse file
-        with open(f'yaml_files/{f}') as file:
+        with open(f'config_files/{f}') as file:
             if file.name not in DENY_LIST:
                 lines = file.readlines()
 
