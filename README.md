@@ -1,6 +1,6 @@
-# wikimedia-csv-parser
+# Wikimedia CSV Parser
 
-# Project description
+## Project description
 
 This is a simple parser for Wikimedia CSV files. It is designed to be used with
 the "https://github.com/wikimedia/mediawiki-services-cxserver/tree/master/config" directory.
@@ -28,15 +28,15 @@ Some YAML files should be ignored, currently:
 The mt-defaults.wikimedia.yaml file is considered for the supported translation pairs and
 default translation engine for each pair of the last column in our generated CSV file.
 
-# Installation
+## Installation
 
-### Requirements
+#### Requirements
 
 * Python 3.6 or higher
 * pip
 * git
 
-### Setup
+#### Setup
 
 * Clone the repository
   git clone ahn-nath/wikimedia-csv-parser
