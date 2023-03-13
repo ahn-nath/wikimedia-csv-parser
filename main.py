@@ -6,11 +6,9 @@ import pickle
 import re
 
 PATH = 'yaml_files'
-# TODO: handle the second list case later
+
 DENY_LIST = ['yaml_files/mt-defaults.wikimedia.yaml', 'yaml_files/MWPageLoader.yaml', 'yaml_files/languages.yaml',
              'yaml_files/JsonDict.yaml', 'yaml_files/Dictd.yaml', 'yaml_files/transform.js']
-#+ [
-#                'yaml_files/Google.yaml', 'yaml_files/Yandex.yaml']
 
 
 def get_preferred_engines():
@@ -63,55 +61,61 @@ def generate_csv(preferred_engines):
     """
     # parse each file
     # list for the lines of the CSV file
+
     csv_strings = ["source language,target language,translation engine,is preferred engine?"]
+    # for f in os.listdir('yaml_files'):
     for f in os.listdir('yaml_files'):
         # parse file
         with open(f'yaml_files/{f}') as file:
             if file.name not in DENY_LIST:
                 lines = file.readlines()
 
-        # get the translation engine used
-        cvs_pairs_dict = {}
-        engine = re.split("\W+", file.name)[1]
-        standard = False if "languages:" in lines[1] else True
-        # if standard
-        if standard:
-            for line in lines:
-                if line:
-                    target = ''
-                    # get the source language
-                    if ":" in line:
-                        source = line.split(':')[0].strip()
-                    # get the target language
-                    else:
-                        target = line.split('-')[1].strip()
+                # get the translation engine used
+                cvs_pairs_dict = {}
+                engine = re.split("\W+", file.name)[1]
+                standard = False if "languages:" in lines[1] else True
 
-                    if source and target:
-                        cvs_pairs_dict["{}:{}".format(source, target)] = engine
+                # if standard input
+                if standard:
+                    # iterate over each line and get the source and target languages
+                    for line in lines:
+                        if line:
+                            target = ''
+                            # get the source language
+                            if ":" in line:
+                                source = line.split(':')[0].strip()
+                            # get the target language
+                            else:
+                                target = line.split('-')[1].strip()
 
-        else:
-            # languages list
-            # regex to remove non-alphabetic characters
-            languages = re.sub(r'[^a-zA-Z]', '', lines[2:]).split(',')
-            # restrictions
-            english_variants = ['en', 'simple']
-            not_as_target = []
-            for lang in languages:
-                for target in languages:
-                    # if the target language is not the source language and it's not in the not_as_target list,
-                    # and it's not an english variant
-                    if (lang != target) and (target not in not_as_target) and (lang and target not in english_variants):
-                        cvs_pairs_dict["{}:{}".format(lang, target)] = engine
+                            if source and target:
+                                cvs_pairs_dict["{}:{}".format(source, target)] = engine
 
-        # iterate over dictionary and handle each case
-        for key, value in cvs_pairs_dict.items():
-            # get the source and target languages from key, check if the value or engine is the preferred to construct
-            source, target = key.split(':', 2)
-            # we will mark as true if the engine is the preferred one in the preferred_engines dictionary
-            is_preferred = 'true' if preferred_engines.get(f'{source}-{target}') == engine else 'false'
-            csv_string = f"{source},{target},{engine},{is_preferred}"
+                else:
+                    # remove special characters and save all languages to list
+                    languages = [language.replace("-", "").strip() for language in lines[2:]]
+                    # restrictions
+                    english_variants = ['en', 'simple']
+                    not_as_target = []
 
-            csv_strings.append(csv_string)
+                    # iterate over each language and get the source and target languages
+                    for lang in languages:
+                        for target in languages:
+                            # if the target language is not the source language and it's not in the not_as_target list,
+                            # and it's not an english variant
+                            if (lang != target) and (target not in not_as_target):
+                                if lang not in english_variants or target not in english_variants:
+                                    cvs_pairs_dict["{}:{}".format(lang, target)] = engine
+
+                # iterate over dictionary after getting source and target pairs and handle cases to create a CSV string
+                for key, value in cvs_pairs_dict.items():
+                    # get source and target languages, check if the value or engine is the preferred to construct
+                    source, target = key.split(':', 2)
+                    # we will mark as true if the engine is the preferred one in the preferred_engines dictionary
+                    is_preferred = 'true' if preferred_engines.get(f'{source}-{target}') == engine else 'false'
+                    csv_string = f"{source},{target},{engine},{is_preferred}"
+
+                    csv_strings.append(csv_string)
 
     # after processing all the files, write the list to a CSV file
     with open('cx_server_parsed.csv', 'w') as f:
@@ -122,6 +126,7 @@ def generate_csv(preferred_engines):
 
 # Press the green button in the gutter to run the script.
 if __name__ == '__main__':
+    preferred_engines = get_preferred_engines()
     # get the preferred engines
     preferred_engines_out = get_preferred_engines()
     # generate the CSV file
