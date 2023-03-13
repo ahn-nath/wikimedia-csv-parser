@@ -8,10 +8,11 @@ import re
 PATH = 'config_files'
 
 DENY_LIST = ['config_files/mt-defaults.wikimedia.yaml', 'config_files/MWPageLoader.yaml', 'config_files/languages.yaml',
-             'config_files/JsonDict.yaml', 'config_files/Dictd.yaml', 'config_files/transform.js']
+             'config_files/JsonDict.yaml', 'config_files/Dictd.yaml', 'config_files/transform.js',
+             'test_files/mt-defaults.wikimedia_test.yaml', 'test_files/expected_output_test.csv']
 
 
-def get_preferred_engines():
+def get_preferred_engines(file_path='config_files/mt-defaults.wikimedia.yaml', debug=False):
     """
 
         Get the preferred engines from the mt-defaults.wikimedia.yaml file and saves them in a list.
@@ -26,13 +27,16 @@ def get_preferred_engines():
     """
     # check if file exists
     try:
+        if debug:
+            raise FileNotFoundError
+
         with open('preferred_engines.pickle', 'rb') as file:
             preferred_engines = pickle.load(file)
 
     # if it doesn't exist, create it
     except FileNotFoundError:
         # open file and read each line
-        with open('config_files/mt-defaults.wikimedia.yaml', 'r') as file:
+        with open(file_path, 'r') as file:
             lines = file.readlines()
         # get the preferred engines
         preferred_engines = {}
@@ -50,7 +54,7 @@ def get_preferred_engines():
 
 
 # generate the CSV file
-def generate_csv(preferred_engines):
+def generate_csv(preferred_engines, output_file_name='output_files/cx_server_parsed.csv', source_file_path='config_files'):
     """
         It parses specific files and generates a CSV file with the data that at least includes the source language,
         the target language, the translation engine used, and whether or not the translation engine is preferred or not
@@ -63,9 +67,9 @@ def generate_csv(preferred_engines):
     # list for the lines of the CSV file
     csv_strings = ["source language,target language,translation engine,is preferred engine?"]
     # for f in os.listdir('config_files'):
-    for f in os.listdir('config_files'):
+    for f in os.listdir(source_file_path):
         # parse file
-        with open(f'config_files/{f}') as file:
+        with open(f'{source_file_path}/{f}') as file:
             if file.name not in DENY_LIST:
                 lines = file.readlines()
 
@@ -117,7 +121,7 @@ def generate_csv(preferred_engines):
                     csv_strings.append(csv_string)
 
     # after processing all the files, write the list to a CSV file
-    with open('cx_server_parsed.csv', 'w') as f:
+    with open(output_file_name, 'w') as f:
         f.writelines([f"{x}\n" for x in csv_strings])
 
     return csv_strings
