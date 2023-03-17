@@ -39,11 +39,16 @@ default translation engine for each pair of the last column in our generated CSV
 #### Setup
 
 * Clone the repository
-  git clone ahn-nath/wikimedia-csv-parser
+
+  `git clone ahn-nath/wikimedia-csv-parser`
+  
 * Test the project
-  python test.py
+  
+  `python test.py`
+  
 * Run the script
-  python main.py
+
+  `python main.py`
 
 
 
