@@ -6,13 +6,13 @@ import pickle
 import re
 
 PATH = 'config_files'
-
-DENY_LIST = ['config_files/mt-defaults.wikimedia.yaml', 'config_files/MWPageLoader.yaml', 'config_files/languages.yaml',
-             'config_files/JsonDict.yaml', 'config_files/Dictd.yaml', 'config_files/transform.js',
+DENY_LIST = ['{}/mt-defaults.wikimedia.yaml'.format(PATH), '{}/MWPageLoader.yaml'.format(PATH),
+             '{}/languages.yaml'.format(PATH),
+             '{}/JsonDict.yaml'.format(PATH), '{}/Dictd.yaml'.format(PATH), '{}/transform.js'.format(PATH),
              'test_files/mt-defaults.wikimedia_test.yaml', 'test_files/expected_output_test.csv']
 
 
-def get_preferred_engines(file_path='config_files/mt-defaults.wikimedia.yaml', debug=False):
+def get_preferred_engines(file_path='{}/mt-defaults.wikimedia.yaml'.format(PATH), debug=False):
     """
 
         Get the preferred engines from the mt-defaults.wikimedia.yaml file and saves them in a list.
@@ -54,7 +54,7 @@ def get_preferred_engines(file_path='config_files/mt-defaults.wikimedia.yaml', d
 
 
 # generate the CSV file
-def generate_csv(preferred_engines, output_file_name='output_files/cx_server_parsed.csv', source_file_path='config_files'):
+def generate_csv(preferred_engines, output_file_name='output_files/cx_server_parsed.csv', source_file_path=PATH):
     """
         It parses specific files and generates a CSV file with the data that at least includes the source language,
         the target language, the translation engine used, and whether or not the translation engine is preferred or not
@@ -66,7 +66,7 @@ def generate_csv(preferred_engines, output_file_name='output_files/cx_server_par
     # parse each file
     # list for the lines of the CSV file
     csv_strings = ["source language,target language,translation engine,is preferred engine?"]
-    # for f in os.listdir('config_files'):
+
     for f in os.listdir(source_file_path):
         # parse file
         with open(f'{source_file_path}/{f}') as file:
@@ -134,5 +134,3 @@ if __name__ == '__main__':
     preferred_engines_out = get_preferred_engines()
     # generate the CSV file
     csv_strings_out = generate_csv(preferred_engines_out)
-    # print output
-    print(csv_strings_out)
