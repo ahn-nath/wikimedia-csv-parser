@@ -17,7 +17,7 @@ af,as,GoogleTest,false
 af,ay,GoogleTest,false
 af,az,GoogleTest,false
 af,be,GoogleTest,false
-af,betarask,GoogleTest,false
+af,be-tarask,GoogleTest,false
 af,bg,GoogleTest,false
 am,af,GoogleTest,false
 am,ar,GoogleTest,false
@@ -26,7 +26,7 @@ am,as,GoogleTest,false
 am,ay,GoogleTest,false
 am,az,GoogleTest,false
 am,be,GoogleTest,false
-am,betarask,GoogleTest,false
+am,be-tarask,GoogleTest,false
 am,bg,GoogleTest,false
 ar,af,GoogleTest,false
 ar,am,GoogleTest,false
@@ -35,7 +35,7 @@ ar,as,GoogleTest,false
 ar,ay,GoogleTest,false
 ar,az,GoogleTest,false
 ar,be,GoogleTest,false
-ar,betarask,GoogleTest,false
+ar,be-tarask,GoogleTest,false
 ar,bg,GoogleTest,false
 arz,af,GoogleTest,false
 arz,am,GoogleTest,false
@@ -44,7 +44,7 @@ arz,as,GoogleTest,false
 arz,ay,GoogleTest,false
 arz,az,GoogleTest,false
 arz,be,GoogleTest,false
-arz,betarask,GoogleTest,false
+arz,be-tarask,GoogleTest,false
 arz,bg,GoogleTest,false
 as,af,GoogleTest,false
 as,am,GoogleTest,false
@@ -53,7 +53,7 @@ as,arz,GoogleTest,false
 as,ay,GoogleTest,false
 as,az,GoogleTest,false
 as,be,GoogleTest,false
-as,betarask,GoogleTest,false
+as,be-tarask,GoogleTest,false
 as,bg,GoogleTest,false
 ay,af,GoogleTest,false
 ay,am,GoogleTest,false
@@ -62,7 +62,7 @@ ay,arz,GoogleTest,false
 ay,as,GoogleTest,false
 ay,az,GoogleTest,false
 ay,be,GoogleTest,false
-ay,betarask,GoogleTest,false
+ay,be-tarask,GoogleTest,false
 ay,bg,GoogleTest,false
 az,af,GoogleTest,false
 az,am,GoogleTest,false
@@ -71,7 +71,7 @@ az,arz,GoogleTest,false
 az,as,GoogleTest,false
 az,ay,GoogleTest,false
 az,be,GoogleTest,false
-az,betarask,GoogleTest,false
+az,be-tarask,GoogleTest,false
 az,bg,GoogleTest,false
 be,af,GoogleTest,false
 be,am,GoogleTest,false
@@ -80,17 +80,17 @@ be,arz,GoogleTest,false
 be,as,GoogleTest,false
 be,ay,GoogleTest,false
 be,az,GoogleTest,false
-be,betarask,GoogleTest,false
+be,be-tarask,GoogleTest,false
 be,bg,GoogleTest,false
-betarask,af,GoogleTest,false
-betarask,am,GoogleTest,false
-betarask,ar,GoogleTest,false
-betarask,arz,GoogleTest,false
-betarask,as,GoogleTest,false
-betarask,ay,GoogleTest,false
-betarask,az,GoogleTest,false
-betarask,be,GoogleTest,false
-betarask,bg,GoogleTest,false
+be-tarask,af,GoogleTest,false
+be-tarask,am,GoogleTest,false
+be-tarask,ar,GoogleTest,false
+be-tarask,arz,GoogleTest,false
+be-tarask,as,GoogleTest,false
+be-tarask,ay,GoogleTest,false
+be-tarask,az,GoogleTest,false
+be-tarask,be,GoogleTest,false
+be-tarask,bg,GoogleTest,false
 bg,af,GoogleTest,false
 bg,am,GoogleTest,false
 bg,ar,GoogleTest,false
@@ -99,4 +99,4 @@ bg,as,GoogleTest,false
 bg,ay,GoogleTest,false
 bg,az,GoogleTest,false
 bg,be,GoogleTest,false
-bg,betarask,GoogleTest,false
+bg,be-tarask,GoogleTest,false
