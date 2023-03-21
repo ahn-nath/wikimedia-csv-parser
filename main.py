@@ -2,6 +2,7 @@
 import os
 import pickle
 import yaml
+import csv
 
 # define constants
 PATH = 'config_files'
@@ -96,33 +97,34 @@ def generate_csv(preferred_engines, output_file_name='output_files/cx_server_par
     # list for the lines of the CSV file
     csv_strings = ["source language,target language,translation engine,is preferred engine?"]
 
-    for f in os.listdir(source_file_path):
-        # parse file
-        with open(f'{source_file_path}/{f}') as file:
-            if file.name not in DENY_LIST:
-                lines = yaml.safe_load(file)
+    # prepare the CSV file to write
+    with open(output_file_name, 'w') as file_output:
+        writer = csv.writer(file_output)
+        writer.writerow(
+            ["source language", "target language", "translation engine", "is preferred engine?"])
 
-                # get the translation engine used
-                engine = os.path.splitext(f)[0]
-                standard = False if "languages" in lines else True
+        # iterate over each file in the directory
+        for f in os.listdir(source_file_path):
+            # parse file
+            with open(f'{source_file_path}/{f}') as file:
+                if file.name not in DENY_LIST:
+                    lines = yaml.safe_load(file)
 
-                # parse the CSV file
-                cvs_pairs_dict = parse_csv(engine, standard, lines)
+                    # get the translation engine used
+                    engine = os.path.splitext(f)[0]
+                    standard = False if "languages" in lines else True
 
-                # iterate over dictionary after getting source and target pairs and handle cases to create a CSV string
-                for key, value in cvs_pairs_dict.items():
-                    # get source and target languages, check if the value or engine is the preferred to construct
-                    source, target = key.split(':', 2)
-                    # we will mark as true if the engine is the preferred one in the preferred_engines dictionary
-                    is_preferred = 'true' if preferred_engines.get(f'{source}-{target}') == engine else 'false'
-                    csv_string = f"{source},{target},{engine},{is_preferred}"
+                    # parse the CSV file
+                    cvs_pairs_dict = parse_csv(engine, standard, lines)
 
-                    csv_strings.append(csv_string)
-
-    # after processing all the files, write the list to a CSV file
-    with open(output_file_name, 'w') as f:
-        f.writelines([f"{x}\n" for x in csv_strings])
-
+                    for key, value in cvs_pairs_dict.items():
+                        # get source and target languages, check if the value or engine is the preferred to construct
+                        source, target = key.split(':', 2)
+                        engine = value
+                        # we will mark as true if the engine is the preferred one in the preferred_engines dictionary
+                        is_preferred = 'true' if preferred_engines.get(f'{source}-{target}') == engine else 'false'
+                        # add the line to the CSV file
+                        writer.writerow([source, target, engine, is_preferred])
     return csv_strings
 
 
