@@ -41,6 +41,9 @@ default translation engine for each pair of the last column in our generated CSV
 * Clone the repository
 
   `git clone ahn-nath/wikimedia-csv-parser`
+* Install the requirements
+
+  `pip install -r requirements.txt`
   
 * Test the project
   
@@ -49,6 +52,11 @@ default translation engine for each pair of the last column in our generated CSV
 * Run the script
 
   `python main.py`
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details
+
 
 
 
