@@ -64,42 +64,38 @@ def generate_csv(preferred_engines, output_file_name='output_files/cx_server_par
         # parse file
         with open(f'{source_file_path}/{f}') as file:
             if file.name not in DENY_LIST:
-                lines = file.readlines()
+                lines = yaml.safe_load(file)
 
                 # get the translation engine used
                 cvs_pairs_dict = {}
                 engine = re.split("\W+", file.name)[1]
-                standard = False if "languages:" in lines[1] else True
+                standard = False if "languages" in lines else True
 
                 # if standard input
                 if standard:
-                    # iterate over each line and get the source and target languages
-                    for line in lines:
-                        if line:
-                            target = ''
-                            # get the source language
-                            if ":" in line:
-                                source = line.split(':')[0].strip()
-                            # get the target language
-                            else:
-                                target = line.split('-')[1].strip()
-
-                            if source and target:
-                                cvs_pairs_dict["{}:{}".format(source, target)] = engine
-
+                    # iterate over each source (dictionary key) and their values
+                    for source in lines:
+                        # for each target (dictionary value) in array of source, add pair
+                        for target in lines[source]:
+                            cvs_pairs_dict["{}:{}".format(source, target)] = engine
                 else:
                     # remove special characters and save all languages to list
-                    languages = [language.replace("-", "").strip() for language in lines[2:]]
+                    languages = lines["languages"]
                     # restrictions
                     english_variants = ['en', 'simple']
                     not_as_target = []
 
                     # iterate over each language and get the source and target languages
                     for lang in languages:
+                        # if lang is "False", replace with "no".
+                        # NOTE: the YAML library converts "no" to False for some strange reason
+                        lang = 'no' if not lang else lang
                         for target in languages:
-                            # if the target language is not the source language and it's not in the not_as_target list,
-                            # and it's not an english variant
+                            # if target is "False", replace with "no".
+                            target = 'no' if not target else target
+                            # if the target language is not the source, and it's not in the not_as_target list,
                             if (lang != target) and (target not in not_as_target):
+                                # and it's not an english variant
                                 if lang not in english_variants or target not in english_variants:
                                     cvs_pairs_dict["{}:{}".format(lang, target)] = engine
 
@@ -120,10 +116,8 @@ def generate_csv(preferred_engines, output_file_name='output_files/cx_server_par
     return csv_strings
 
 
-# Press the green button in the gutter to run the script.
 if __name__ == '__main__':
     # get the preferred engines
     preferred_engines_out = get_preferred_engines()
     # generate the CSV file
     csv_strings_out = generate_csv(preferred_engines_out)
-
