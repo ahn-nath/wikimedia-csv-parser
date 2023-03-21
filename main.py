@@ -1,10 +1,10 @@
 # get default/preferred engines
 import os
 import pickle
-
-# define constants
+import yaml
 import re
 
+# define constants
 PATH = 'config_files'
 DENY_LIST = ['{}/mt-defaults.wikimedia.yaml'.format(PATH), '{}/MWPageLoader.yaml'.format(PATH),
              '{}/languages.yaml'.format(PATH),
@@ -31,26 +31,19 @@ def get_preferred_engines(file_path='{}/mt-defaults.wikimedia.yaml'.format(PATH)
             raise FileNotFoundError
 
         with open('preferred_engines.pickle', 'rb') as file:
-            preferred_engines = pickle.load(file)
+            preferred_engines_data = pickle.load(file)
 
     # if it doesn't exist, create it
     except FileNotFoundError:
-        # open file and read each line
+        # use yaml module to parse the file
         with open(file_path, 'r') as file:
-            lines = file.readlines()
-        # get the preferred engines
-        preferred_engines = {}
-        for line in lines:
-            if line:
-                key = line.split(':')[0].strip()
-                value = line.split(':')[1].strip()
-                preferred_engines[key] = value
+            preferred_engines_data = yaml.safe_load(file)
 
         # save the list in a pickle file
         with open('preferred_engines.pickle', 'wb') as file:
-            pickle.dump(preferred_engines, file)
+            pickle.dump(preferred_engines_data, file)
 
-    return preferred_engines
+    return preferred_engines_data
 
 
 # generate the CSV file
@@ -129,8 +122,8 @@ def generate_csv(preferred_engines, output_file_name='output_files/cx_server_par
 
 # Press the green button in the gutter to run the script.
 if __name__ == '__main__':
-    preferred_engines = get_preferred_engines()
     # get the preferred engines
     preferred_engines_out = get_preferred_engines()
     # generate the CSV file
     csv_strings_out = generate_csv(preferred_engines_out)
+

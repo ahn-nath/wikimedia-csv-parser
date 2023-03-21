@@ -98,15 +98,15 @@ sv,nn,Apertium,false
 szl,pl,Apertium,false
 tt,kk,Apertium,true
 ur,hi,Apertium,true
-ca,eu,Elia,false
+ca,eu,Elia,true
 ca,fr,Elia,false
 ca,simple,Elia,false
 en,ca,Elia,false
 en,es,Elia,false
-en,eu,Elia,false
+en,eu,Elia,true
 en,fr,Elia,false
 en,gl,Elia,false
-es,eu,Elia,false
+es,eu,Elia,true
 es,fr,Elia,false
 es,simple,Elia,false
 eu,ca,Elia,false
@@ -116,10 +116,10 @@ eu,gl,Elia,false
 eu,simple,Elia,false
 fr,ca,Elia,false
 fr,es,Elia,false
-fr,eu,Elia,false
+fr,eu,Elia,true
 fr,gl,Elia,false
 fr,simple,Elia,false
-gl,eu,Elia,false
+gl,eu,Elia,true
 gl,fr,Elia,false
 gl,simple,Elia,false
 simple,ca,Elia,false
@@ -133,14 +133,14 @@ en,ay,Flores,false
 en,ba,Flores,false
 en,ckb,Flores,false
 en,ha,Flores,false
-en,ig,Flores,false
+en,ig,Flores,true
 en,ilo,Flores,false
-en,is,Flores,false
+en,is,Flores,true
 en,kg,Flores,false
 en,ln,Flores,false
 en,lg,Flores,false
 en,nso,Flores,false
-en,oc,Flores,false
+en,oc,Flores,true
 en,om,Flores,false
 en,ss,Flores,false
 en,tn,Flores,false
@@ -330,7 +330,7 @@ af,xh,Google,false
 af,yi,Google,false
 af,yo,Google,false
 af,yue,Google,false
-af,zh,Google,false
+af,zh,Google,true
 af,zu,Google,false
 am,af,Google,false
 am,ar,Google,false
@@ -598,7 +598,7 @@ ar,xh,Google,false
 ar,yi,Google,false
 ar,yo,Google,false
 ar,yue,Google,false
-ar,zh,Google,false
+ar,zh,Google,true
 ar,zu,Google,false
 arz,af,Google,false
 arz,am,Google,false
@@ -1134,7 +1134,7 @@ az,xh,Google,false
 az,yi,Google,false
 az,yo,Google,false
 az,yue,Google,false
-az,zh,Google,false
+az,zh,Google,true
 az,zu,Google,false
 be,af,Google,false
 be,am,Google,false
@@ -1268,7 +1268,7 @@ be,xh,Google,false
 be,yi,Google,false
 be,yo,Google,false
 be,yue,Google,false
-be,zh,Google,false
+be,zh,Google,true
 be,zu,Google,false
 betarask,af,Google,false
 betarask,am,Google,false
@@ -1536,7 +1536,7 @@ bg,xh,Google,false
 bg,yi,Google,false
 bg,yo,Google,false
 bg,yue,Google,false
-bg,zh,Google,false
+bg,zh,Google,true
 bg,zu,Google,false
 bho,af,Google,false
 bho,am,Google,false
@@ -1938,7 +1938,7 @@ bn,xh,Google,false
 bn,yi,Google,false
 bn,yo,Google,false
 bn,yue,Google,false
-bn,zh,Google,false
+bn,zh,Google,true
 bn,zu,Google,false
 bs,af,Google,false
 bs,am,Google,false
@@ -2072,7 +2072,7 @@ bs,xh,Google,false
 bs,yi,Google,false
 bs,yo,Google,false
 bs,yue,Google,false
-bs,zh,Google,false
+bs,zh,Google,true
 bs,zu,Google,false
 ca,af,Google,false
 ca,am,Google,false
@@ -2100,7 +2100,7 @@ ca,ee,Google,false
 ca,el,Google,false
 ca,en,Google,false
 ca,eo,Google,false
-ca,es,Google,false
+ca,es,Google,true
 ca,et,Google,false
 ca,eu,Google,false
 ca,fa,Google,false
@@ -2110,7 +2110,7 @@ ca,fy,Google,false
 ca,ga,Google,false
 ca,gan,Google,false
 ca,gd,Google,false
-ca,gl,Google,false
+ca,gl,Google,true
 ca,gn,Google,false
 ca,gom,Google,false
 ca,gu,Google,false
@@ -2173,7 +2173,7 @@ ca,sa,Google,false
 ca,sd,Google,false
 ca,sh,Google,false
 ca,si,Google,false
-ca,simple,Google,false
+ca,simple,Google,true
 ca,sk,Google,false
 ca,sl,Google,false
 ca,sm,Google,false
@@ -2206,7 +2206,7 @@ ca,xh,Google,false
 ca,yi,Google,false
 ca,yo,Google,false
 ca,yue,Google,false
-ca,zh,Google,false
+ca,zh,Google,true
 ca,zu,Google,false
 ceb,af,Google,false
 ceb,am,Google,false
@@ -2340,7 +2340,7 @@ ceb,xh,Google,false
 ceb,yi,Google,false
 ceb,yo,Google,false
 ceb,yue,Google,false
-ceb,zh,Google,false
+ceb,zh,Google,true
 ceb,zu,Google,false
 ckb,af,Google,false
 ckb,am,Google,false
@@ -2608,7 +2608,7 @@ co,xh,Google,false
 co,yi,Google,false
 co,yo,Google,false
 co,yue,Google,false
-co,zh,Google,false
+co,zh,Google,true
 co,zu,Google,false
 cs,af,Google,false
 cs,am,Google,false
@@ -2742,7 +2742,7 @@ cs,xh,Google,false
 cs,yi,Google,false
 cs,yo,Google,false
 cs,yue,Google,false
-cs,zh,Google,false
+cs,zh,Google,true
 cs,zu,Google,false
 cy,af,Google,false
 cy,am,Google,false
@@ -2876,7 +2876,7 @@ cy,xh,Google,false
 cy,yi,Google,false
 cy,yo,Google,false
 cy,yue,Google,false
-cy,zh,Google,false
+cy,zh,Google,true
 cy,zu,Google,false
 da,af,Google,false
 da,am,Google,false
@@ -3010,7 +3010,7 @@ da,xh,Google,false
 da,yi,Google,false
 da,yo,Google,false
 da,yue,Google,false
-da,zh,Google,false
+da,zh,Google,true
 da,zu,Google,false
 de,af,Google,false
 de,am,Google,false
@@ -3144,7 +3144,7 @@ de,xh,Google,false
 de,yi,Google,false
 de,yo,Google,false
 de,yue,Google,false
-de,zh,Google,false
+de,zh,Google,true
 de,zu,Google,false
 dv,af,Google,false
 dv,am,Google,false
@@ -3546,7 +3546,7 @@ el,xh,Google,false
 el,yi,Google,false
 el,yo,Google,false
 el,yue,Google,false
-el,zh,Google,false
+el,zh,Google,true
 el,zu,Google,false
 en,af,Google,false
 en,am,Google,false
@@ -3562,9 +3562,9 @@ en,bho,Google,false
 en,bm,Google,false
 en,bn,Google,false
 en,bs,Google,false
-en,ca,Google,false
+en,ca,Google,true
 en,ceb,Google,false
-en,ckb,Google,false
+en,ckb,Google,true
 en,co,Google,false
 en,cs,Google,false
 en,cy,Google,false
@@ -3574,12 +3574,12 @@ en,dv,Google,false
 en,ee,Google,false
 en,el,Google,false
 en,eo,Google,false
-en,es,Google,false
+en,es,Google,true
 en,et,Google,false
 en,eu,Google,false
 en,fa,Google,false
 en,fi,Google,false
-en,fr,Google,false
+en,fr,Google,true
 en,fy,Google,false
 en,ga,Google,false
 en,gan,Google,false
@@ -3588,7 +3588,7 @@ en,gl,Google,false
 en,gn,Google,false
 en,gom,Google,false
 en,gu,Google,false
-en,ha,Google,false
+en,ha,Google,true
 en,haw,Google,false
 en,he,Google,false
 en,hi,Google,false
@@ -3600,7 +3600,7 @@ en,id,Google,false
 en,ig,Google,false
 en,ilo,Google,false
 en,is,Google,false
-en,it,Google,false
+en,it,Google,true
 en,ja,Google,false
 en,jv,Google,false
 en,ka,Google,false
@@ -3645,7 +3645,7 @@ en,ru,Google,false
 en,rw,Google,false
 en,sa,Google,false
 en,sd,Google,false
-en,sh,Google,false
+en,sh,Google,true
 en,si,Google,false
 en,sk,Google,false
 en,sl,Google,false
@@ -3679,8 +3679,8 @@ en,xh,Google,false
 en,yi,Google,false
 en,yo,Google,false
 en,yue,Google,false
-en,zh,Google,false
-en,zu,Google,false
+en,zh,Google,true
+en,zu,Google,true
 eo,af,Google,false
 eo,am,Google,false
 eo,ar,Google,false
@@ -3813,7 +3813,7 @@ eo,xh,Google,false
 eo,yi,Google,false
 eo,yo,Google,false
 eo,yue,Google,false
-eo,zh,Google,false
+eo,zh,Google,true
 eo,zu,Google,false
 es,af,Google,false
 es,am,Google,false
@@ -3831,7 +3831,7 @@ es,bn,Google,false
 es,bs,Google,false
 es,ca,Google,false
 es,ceb,Google,false
-es,ckb,Google,false
+es,ckb,Google,true
 es,co,Google,false
 es,cs,Google,false
 es,cy,Google,false
@@ -3855,7 +3855,7 @@ es,gl,Google,false
 es,gn,Google,false
 es,gom,Google,false
 es,gu,Google,false
-es,ha,Google,false
+es,ha,Google,true
 es,haw,Google,false
 es,he,Google,false
 es,hi,Google,false
@@ -3914,7 +3914,7 @@ es,sa,Google,false
 es,sd,Google,false
 es,sh,Google,false
 es,si,Google,false
-es,simple,Google,false
+es,simple,Google,true
 es,sk,Google,false
 es,sl,Google,false
 es,sm,Google,false
@@ -3947,7 +3947,7 @@ es,xh,Google,false
 es,yi,Google,false
 es,yo,Google,false
 es,yue,Google,false
-es,zh,Google,false
+es,zh,Google,true
 es,zu,Google,false
 et,af,Google,false
 et,am,Google,false
@@ -4081,7 +4081,7 @@ et,xh,Google,false
 et,yi,Google,false
 et,yo,Google,false
 et,yue,Google,false
-et,zh,Google,false
+et,zh,Google,true
 et,zu,Google,false
 eu,af,Google,false
 eu,am,Google,false
@@ -4097,7 +4097,7 @@ eu,bho,Google,false
 eu,bm,Google,false
 eu,bn,Google,false
 eu,bs,Google,false
-eu,ca,Google,false
+eu,ca,Google,true
 eu,ceb,Google,false
 eu,ckb,Google,false
 eu,co,Google,false
@@ -4110,16 +4110,16 @@ eu,ee,Google,false
 eu,el,Google,false
 eu,en,Google,false
 eu,eo,Google,false
-eu,es,Google,false
+eu,es,Google,true
 eu,et,Google,false
 eu,fa,Google,false
 eu,fi,Google,false
-eu,fr,Google,false
+eu,fr,Google,true
 eu,fy,Google,false
 eu,ga,Google,false
 eu,gan,Google,false
 eu,gd,Google,false
-eu,gl,Google,false
+eu,gl,Google,true
 eu,gn,Google,false
 eu,gom,Google,false
 eu,gu,Google,false
@@ -4182,7 +4182,7 @@ eu,sa,Google,false
 eu,sd,Google,false
 eu,sh,Google,false
 eu,si,Google,false
-eu,simple,Google,false
+eu,simple,Google,true
 eu,sk,Google,false
 eu,sl,Google,false
 eu,sm,Google,false
@@ -4215,7 +4215,7 @@ eu,xh,Google,false
 eu,yi,Google,false
 eu,yo,Google,false
 eu,yue,Google,false
-eu,zh,Google,false
+eu,zh,Google,true
 eu,zu,Google,false
 fa,af,Google,false
 fa,am,Google,false
@@ -4349,7 +4349,7 @@ fa,xh,Google,false
 fa,yi,Google,false
 fa,yo,Google,false
 fa,yue,Google,false
-fa,zh,Google,false
+fa,zh,Google,true
 fa,zu,Google,false
 fi,af,Google,false
 fi,am,Google,false
@@ -4483,7 +4483,7 @@ fi,xh,Google,false
 fi,yi,Google,false
 fi,yo,Google,false
 fi,yue,Google,false
-fi,zh,Google,false
+fi,zh,Google,true
 fi,zu,Google,false
 fr,af,Google,false
 fr,am,Google,false
@@ -4499,9 +4499,9 @@ fr,bho,Google,false
 fr,bm,Google,false
 fr,bn,Google,false
 fr,bs,Google,false
-fr,ca,Google,false
+fr,ca,Google,true
 fr,ceb,Google,false
-fr,ckb,Google,false
+fr,ckb,Google,true
 fr,co,Google,false
 fr,cs,Google,false
 fr,cy,Google,false
@@ -4512,7 +4512,7 @@ fr,ee,Google,false
 fr,el,Google,false
 fr,en,Google,false
 fr,eo,Google,false
-fr,es,Google,false
+fr,es,Google,true
 fr,et,Google,false
 fr,eu,Google,false
 fr,fa,Google,false
@@ -4521,11 +4521,11 @@ fr,fy,Google,false
 fr,ga,Google,false
 fr,gan,Google,false
 fr,gd,Google,false
-fr,gl,Google,false
+fr,gl,Google,true
 fr,gn,Google,false
 fr,gom,Google,false
 fr,gu,Google,false
-fr,ha,Google,false
+fr,ha,Google,true
 fr,haw,Google,false
 fr,he,Google,false
 fr,hi,Google,false
@@ -4584,7 +4584,7 @@ fr,sa,Google,false
 fr,sd,Google,false
 fr,sh,Google,false
 fr,si,Google,false
-fr,simple,Google,false
+fr,simple,Google,true
 fr,sk,Google,false
 fr,sl,Google,false
 fr,sm,Google,false
@@ -4617,7 +4617,7 @@ fr,xh,Google,false
 fr,yi,Google,false
 fr,yo,Google,false
 fr,yue,Google,false
-fr,zh,Google,false
+fr,zh,Google,true
 fr,zu,Google,false
 fy,af,Google,false
 fy,am,Google,false
@@ -4751,7 +4751,7 @@ fy,xh,Google,false
 fy,yi,Google,false
 fy,yo,Google,false
 fy,yue,Google,false
-fy,zh,Google,false
+fy,zh,Google,true
 fy,zu,Google,false
 ga,af,Google,false
 ga,am,Google,false
@@ -4885,7 +4885,7 @@ ga,xh,Google,false
 ga,yi,Google,false
 ga,yo,Google,false
 ga,yue,Google,false
-ga,zh,Google,false
+ga,zh,Google,true
 ga,zu,Google,false
 gan,af,Google,false
 gan,am,Google,false
@@ -5169,7 +5169,7 @@ gl,bho,Google,false
 gl,bm,Google,false
 gl,bn,Google,false
 gl,bs,Google,false
-gl,ca,Google,false
+gl,ca,Google,true
 gl,ceb,Google,false
 gl,ckb,Google,false
 gl,co,Google,false
@@ -5182,12 +5182,12 @@ gl,ee,Google,false
 gl,el,Google,false
 gl,en,Google,false
 gl,eo,Google,false
-gl,es,Google,false
+gl,es,Google,true
 gl,et,Google,false
 gl,eu,Google,false
 gl,fa,Google,false
 gl,fi,Google,false
-gl,fr,Google,false
+gl,fr,Google,true
 gl,fy,Google,false
 gl,ga,Google,false
 gl,gan,Google,false
@@ -5254,7 +5254,7 @@ gl,sa,Google,false
 gl,sd,Google,false
 gl,sh,Google,false
 gl,si,Google,false
-gl,simple,Google,false
+gl,simple,Google,true
 gl,sk,Google,false
 gl,sl,Google,false
 gl,sm,Google,false
@@ -5287,7 +5287,7 @@ gl,xh,Google,false
 gl,yi,Google,false
 gl,yo,Google,false
 gl,yue,Google,false
-gl,zh,Google,false
+gl,zh,Google,true
 gl,zu,Google,false
 gn,af,Google,false
 gn,am,Google,false
@@ -5689,7 +5689,7 @@ gu,xh,Google,false
 gu,yi,Google,false
 gu,yo,Google,false
 gu,yue,Google,false
-gu,zh,Google,false
+gu,zh,Google,true
 gu,zu,Google,false
 ha,af,Google,false
 ha,am,Google,false
@@ -5823,7 +5823,7 @@ ha,xh,Google,false
 ha,yi,Google,false
 ha,yo,Google,false
 ha,yue,Google,false
-ha,zh,Google,false
+ha,zh,Google,true
 ha,zu,Google,false
 haw,af,Google,false
 haw,am,Google,false
@@ -5957,7 +5957,7 @@ haw,xh,Google,false
 haw,yi,Google,false
 haw,yo,Google,false
 haw,yue,Google,false
-haw,zh,Google,false
+haw,zh,Google,true
 haw,zu,Google,false
 he,af,Google,false
 he,am,Google,false
@@ -6091,7 +6091,7 @@ he,xh,Google,false
 he,yi,Google,false
 he,yo,Google,false
 he,yue,Google,false
-he,zh,Google,false
+he,zh,Google,true
 he,zu,Google,false
 hi,af,Google,false
 hi,am,Google,false
@@ -6225,7 +6225,7 @@ hi,xh,Google,false
 hi,yi,Google,false
 hi,yo,Google,false
 hi,yue,Google,false
-hi,zh,Google,false
+hi,zh,Google,true
 hi,zu,Google,false
 hr,af,Google,false
 hr,am,Google,false
@@ -6359,7 +6359,7 @@ hr,xh,Google,false
 hr,yi,Google,false
 hr,yo,Google,false
 hr,yue,Google,false
-hr,zh,Google,false
+hr,zh,Google,true
 hr,zu,Google,false
 ht,af,Google,false
 ht,am,Google,false
@@ -6493,7 +6493,7 @@ ht,xh,Google,false
 ht,yi,Google,false
 ht,yo,Google,false
 ht,yue,Google,false
-ht,zh,Google,false
+ht,zh,Google,true
 ht,zu,Google,false
 hu,af,Google,false
 hu,am,Google,false
@@ -6627,7 +6627,7 @@ hu,xh,Google,false
 hu,yi,Google,false
 hu,yo,Google,false
 hu,yue,Google,false
-hu,zh,Google,false
+hu,zh,Google,true
 hu,zu,Google,false
 hy,af,Google,false
 hy,am,Google,false
@@ -6761,7 +6761,7 @@ hy,xh,Google,false
 hy,yi,Google,false
 hy,yo,Google,false
 hy,yue,Google,false
-hy,zh,Google,false
+hy,zh,Google,true
 hy,zu,Google,false
 id,af,Google,false
 id,am,Google,false
@@ -6895,7 +6895,7 @@ id,xh,Google,false
 id,yi,Google,false
 id,yo,Google,false
 id,yue,Google,false
-id,zh,Google,false
+id,zh,Google,true
 id,zu,Google,false
 ig,af,Google,false
 ig,am,Google,false
@@ -7029,7 +7029,7 @@ ig,xh,Google,false
 ig,yi,Google,false
 ig,yo,Google,false
 ig,yue,Google,false
-ig,zh,Google,false
+ig,zh,Google,true
 ig,zu,Google,false
 ilo,af,Google,false
 ilo,am,Google,false
@@ -7297,7 +7297,7 @@ is,xh,Google,false
 is,yi,Google,false
 is,yo,Google,false
 is,yue,Google,false
-is,zh,Google,false
+is,zh,Google,true
 is,zu,Google,false
 it,af,Google,false
 it,am,Google,false
@@ -7313,7 +7313,7 @@ it,bho,Google,false
 it,bm,Google,false
 it,bn,Google,false
 it,bs,Google,false
-it,ca,Google,false
+it,ca,Google,true
 it,ceb,Google,false
 it,ckb,Google,false
 it,co,Google,false
@@ -7326,7 +7326,7 @@ it,ee,Google,false
 it,el,Google,false
 it,en,Google,false
 it,eo,Google,false
-it,es,Google,false
+it,es,Google,true
 it,et,Google,false
 it,eu,Google,false
 it,fa,Google,false
@@ -7431,7 +7431,7 @@ it,xh,Google,false
 it,yi,Google,false
 it,yo,Google,false
 it,yue,Google,false
-it,zh,Google,false
+it,zh,Google,true
 it,zu,Google,false
 ja,af,Google,false
 ja,am,Google,false
@@ -7565,7 +7565,7 @@ ja,xh,Google,false
 ja,yi,Google,false
 ja,yo,Google,false
 ja,yue,Google,false
-ja,zh,Google,false
+ja,zh,Google,true
 ja,zu,Google,false
 jv,af,Google,false
 jv,am,Google,false
@@ -7699,7 +7699,7 @@ jv,xh,Google,false
 jv,yi,Google,false
 jv,yo,Google,false
 jv,yue,Google,false
-jv,zh,Google,false
+jv,zh,Google,true
 jv,zu,Google,false
 ka,af,Google,false
 ka,am,Google,false
@@ -7833,7 +7833,7 @@ ka,xh,Google,false
 ka,yi,Google,false
 ka,yo,Google,false
 ka,yue,Google,false
-ka,zh,Google,false
+ka,zh,Google,true
 ka,zu,Google,false
 kk,af,Google,false
 kk,am,Google,false
@@ -7967,7 +7967,7 @@ kk,xh,Google,false
 kk,yi,Google,false
 kk,yo,Google,false
 kk,yue,Google,false
-kk,zh,Google,false
+kk,zh,Google,true
 kk,zu,Google,false
 km,af,Google,false
 km,am,Google,false
@@ -8101,7 +8101,7 @@ km,xh,Google,false
 km,yi,Google,false
 km,yo,Google,false
 km,yue,Google,false
-km,zh,Google,false
+km,zh,Google,true
 km,zu,Google,false
 kn,af,Google,false
 kn,am,Google,false
@@ -8235,7 +8235,7 @@ kn,xh,Google,false
 kn,yi,Google,false
 kn,yo,Google,false
 kn,yue,Google,false
-kn,zh,Google,false
+kn,zh,Google,true
 kn,zu,Google,false
 ko,af,Google,false
 ko,am,Google,false
@@ -8369,7 +8369,7 @@ ko,xh,Google,false
 ko,yi,Google,false
 ko,yo,Google,false
 ko,yue,Google,false
-ko,zh,Google,false
+ko,zh,Google,true
 ko,zu,Google,false
 ku,af,Google,false
 ku,am,Google,false
@@ -8503,7 +8503,7 @@ ku,xh,Google,false
 ku,yi,Google,false
 ku,yo,Google,false
 ku,yue,Google,false
-ku,zh,Google,false
+ku,zh,Google,true
 ku,zu,Google,false
 ky,af,Google,false
 ky,am,Google,false
@@ -8771,7 +8771,7 @@ la,xh,Google,false
 la,yi,Google,false
 la,yo,Google,false
 la,yue,Google,false
-la,zh,Google,false
+la,zh,Google,true
 la,zu,Google,false
 lb,af,Google,false
 lb,am,Google,false
@@ -9307,7 +9307,7 @@ lo,xh,Google,false
 lo,yi,Google,false
 lo,yo,Google,false
 lo,yue,Google,false
-lo,zh,Google,false
+lo,zh,Google,true
 lo,zu,Google,false
 lt,af,Google,false
 lt,am,Google,false
@@ -9441,7 +9441,7 @@ lt,xh,Google,false
 lt,yi,Google,false
 lt,yo,Google,false
 lt,yue,Google,false
-lt,zh,Google,false
+lt,zh,Google,true
 lt,zu,Google,false
 lv,af,Google,false
 lv,am,Google,false
@@ -9575,7 +9575,7 @@ lv,xh,Google,false
 lv,yi,Google,false
 lv,yo,Google,false
 lv,yue,Google,false
-lv,zh,Google,false
+lv,zh,Google,true
 lv,zu,Google,false
 mai,af,Google,false
 mai,am,Google,false
@@ -9843,7 +9843,7 @@ mg,xh,Google,false
 mg,yi,Google,false
 mg,yo,Google,false
 mg,yue,Google,false
-mg,zh,Google,false
+mg,zh,Google,true
 mg,zu,Google,false
 mi,af,Google,false
 mi,am,Google,false
@@ -9977,7 +9977,7 @@ mi,xh,Google,false
 mi,yi,Google,false
 mi,yo,Google,false
 mi,yue,Google,false
-mi,zh,Google,false
+mi,zh,Google,true
 mi,zu,Google,false
 mk,af,Google,false
 mk,am,Google,false
@@ -10111,7 +10111,7 @@ mk,xh,Google,false
 mk,yi,Google,false
 mk,yo,Google,false
 mk,yue,Google,false
-mk,zh,Google,false
+mk,zh,Google,true
 mk,zu,Google,false
 ml,af,Google,false
 ml,am,Google,false
@@ -10245,7 +10245,7 @@ ml,xh,Google,false
 ml,yi,Google,false
 ml,yo,Google,false
 ml,yue,Google,false
-ml,zh,Google,false
+ml,zh,Google,true
 ml,zu,Google,false
 mn,af,Google,false
 mn,am,Google,false
@@ -10379,7 +10379,7 @@ mn,xh,Google,false
 mn,yi,Google,false
 mn,yo,Google,false
 mn,yue,Google,false
-mn,zh,Google,false
+mn,zh,Google,true
 mn,zu,Google,false
 mni,af,Google,false
 mni,am,Google,false
@@ -10647,7 +10647,7 @@ mr,xh,Google,false
 mr,yi,Google,false
 mr,yo,Google,false
 mr,yue,Google,false
-mr,zh,Google,false
+mr,zh,Google,true
 mr,zu,Google,false
 ms,af,Google,false
 ms,am,Google,false
@@ -10781,7 +10781,7 @@ ms,xh,Google,false
 ms,yi,Google,false
 ms,yo,Google,false
 ms,yue,Google,false
-ms,zh,Google,false
+ms,zh,Google,true
 ms,zu,Google,false
 mt,af,Google,false
 mt,am,Google,false
@@ -10915,7 +10915,7 @@ mt,xh,Google,false
 mt,yi,Google,false
 mt,yo,Google,false
 mt,yue,Google,false
-mt,zh,Google,false
+mt,zh,Google,true
 mt,zu,Google,false
 my,af,Google,false
 my,am,Google,false
@@ -11049,7 +11049,7 @@ my,xh,Google,false
 my,yi,Google,false
 my,yo,Google,false
 my,yue,Google,false
-my,zh,Google,false
+my,zh,Google,true
 my,zu,Google,false
 ne,af,Google,false
 ne,am,Google,false
@@ -11183,7 +11183,7 @@ ne,xh,Google,false
 ne,yi,Google,false
 ne,yo,Google,false
 ne,yue,Google,false
-ne,zh,Google,false
+ne,zh,Google,true
 ne,zu,Google,false
 nl,af,Google,false
 nl,am,Google,false
@@ -11317,7 +11317,7 @@ nl,xh,Google,false
 nl,yi,Google,false
 nl,yo,Google,false
 nl,yue,Google,false
-nl,zh,Google,false
+nl,zh,Google,true
 nl,zu,Google,false
 no,af,Google,false
 no,am,Google,false
@@ -11451,7 +11451,7 @@ no,xh,Google,false
 no,yi,Google,false
 no,yo,Google,false
 no,yue,Google,false
-no,zh,Google,false
+no,zh,Google,true
 no,zu,Google,false
 nso,af,Google,false
 nso,am,Google,false
@@ -11719,7 +11719,7 @@ ny,xh,Google,false
 ny,yi,Google,false
 ny,yo,Google,false
 ny,yue,Google,false
-ny,zh,Google,false
+ny,zh,Google,true
 ny,zu,Google,false
 om,af,Google,false
 om,am,Google,false
@@ -12121,7 +12121,7 @@ pa,xh,Google,false
 pa,yi,Google,false
 pa,yo,Google,false
 pa,yue,Google,false
-pa,zh,Google,false
+pa,zh,Google,true
 pa,zu,Google,false
 pl,af,Google,false
 pl,am,Google,false
@@ -12255,7 +12255,7 @@ pl,xh,Google,false
 pl,yi,Google,false
 pl,yo,Google,false
 pl,yue,Google,false
-pl,zh,Google,false
+pl,zh,Google,true
 pl,zu,Google,false
 ps,af,Google,false
 ps,am,Google,false
@@ -12389,7 +12389,7 @@ ps,xh,Google,false
 ps,yi,Google,false
 ps,yo,Google,false
 ps,yue,Google,false
-ps,zh,Google,false
+ps,zh,Google,true
 ps,zu,Google,false
 pt,af,Google,false
 pt,am,Google,false
@@ -12418,7 +12418,7 @@ pt,ee,Google,false
 pt,el,Google,false
 pt,en,Google,false
 pt,eo,Google,false
-pt,es,Google,false
+pt,es,Google,true
 pt,et,Google,false
 pt,eu,Google,false
 pt,fa,Google,false
@@ -12428,7 +12428,7 @@ pt,fy,Google,false
 pt,ga,Google,false
 pt,gan,Google,false
 pt,gd,Google,false
-pt,gl,Google,false
+pt,gl,Google,true
 pt,gn,Google,false
 pt,gom,Google,false
 pt,gu,Google,false
@@ -12523,7 +12523,7 @@ pt,xh,Google,false
 pt,yi,Google,false
 pt,yo,Google,false
 pt,yue,Google,false
-pt,zh,Google,false
+pt,zh,Google,true
 pt,zu,Google,false
 qu,af,Google,false
 qu,am,Google,false
@@ -12686,7 +12686,7 @@ ro,ee,Google,false
 ro,el,Google,false
 ro,en,Google,false
 ro,eo,Google,false
-ro,es,Google,false
+ro,es,Google,true
 ro,et,Google,false
 ro,eu,Google,false
 ro,fa,Google,false
@@ -12791,7 +12791,7 @@ ro,xh,Google,false
 ro,yi,Google,false
 ro,yo,Google,false
 ro,yue,Google,false
-ro,zh,Google,false
+ro,zh,Google,true
 ro,zu,Google,false
 ru,af,Google,false
 ru,am,Google,false
@@ -12916,7 +12916,7 @@ ru,ts,Google,false
 ru,tt,Google,false
 ru,tw,Google,false
 ru,ug,Google,false
-ru,uk,Google,false
+ru,uk,Google,true
 ru,ur,Google,false
 ru,uz,Google,false
 ru,vi,Google,false
@@ -12925,7 +12925,7 @@ ru,xh,Google,false
 ru,yi,Google,false
 ru,yo,Google,false
 ru,yue,Google,false
-ru,zh,Google,false
+ru,zh,Google,true
 ru,zu,Google,false
 rw,af,Google,false
 rw,am,Google,false
@@ -13327,7 +13327,7 @@ sd,xh,Google,false
 sd,yi,Google,false
 sd,yo,Google,false
 sd,yue,Google,false
-sd,zh,Google,false
+sd,zh,Google,true
 sd,zu,Google,false
 sh,af,Google,false
 sh,am,Google,false
@@ -13595,7 +13595,7 @@ si,xh,Google,false
 si,yi,Google,false
 si,yo,Google,false
 si,yue,Google,false
-si,zh,Google,false
+si,zh,Google,true
 si,zu,Google,false
 simple,af,Google,false
 simple,am,Google,false
@@ -13611,9 +13611,9 @@ simple,bho,Google,false
 simple,bm,Google,false
 simple,bn,Google,false
 simple,bs,Google,false
-simple,ca,Google,false
+simple,ca,Google,true
 simple,ceb,Google,false
-simple,ckb,Google,false
+simple,ckb,Google,true
 simple,co,Google,false
 simple,cs,Google,false
 simple,cy,Google,false
@@ -13623,17 +13623,17 @@ simple,dv,Google,false
 simple,ee,Google,false
 simple,el,Google,false
 simple,eo,Google,false
-simple,es,Google,false
+simple,es,Google,true
 simple,et,Google,false
-simple,eu,Google,false
+simple,eu,Google,true
 simple,fa,Google,false
 simple,fi,Google,false
-simple,fr,Google,false
+simple,fr,Google,true
 simple,fy,Google,false
 simple,ga,Google,false
 simple,gan,Google,false
 simple,gd,Google,false
-simple,gl,Google,false
+simple,gl,Google,true
 simple,gn,Google,false
 simple,gom,Google,false
 simple,gu,Google,false
@@ -13728,7 +13728,7 @@ simple,xh,Google,false
 simple,yi,Google,false
 simple,yo,Google,false
 simple,yue,Google,false
-simple,zh,Google,false
+simple,zh,Google,true
 simple,zu,Google,false
 sk,af,Google,false
 sk,am,Google,false
@@ -13862,7 +13862,7 @@ sk,xh,Google,false
 sk,yi,Google,false
 sk,yo,Google,false
 sk,yue,Google,false
-sk,zh,Google,false
+sk,zh,Google,true
 sk,zu,Google,false
 sl,af,Google,false
 sl,am,Google,false
@@ -13996,7 +13996,7 @@ sl,xh,Google,false
 sl,yi,Google,false
 sl,yo,Google,false
 sl,yue,Google,false
-sl,zh,Google,false
+sl,zh,Google,true
 sl,zu,Google,false
 sm,af,Google,false
 sm,am,Google,false
@@ -14130,7 +14130,7 @@ sm,xh,Google,false
 sm,yi,Google,false
 sm,yo,Google,false
 sm,yue,Google,false
-sm,zh,Google,false
+sm,zh,Google,true
 sm,zu,Google,false
 sn,af,Google,false
 sn,am,Google,false
@@ -14264,7 +14264,7 @@ sn,xh,Google,false
 sn,yi,Google,false
 sn,yo,Google,false
 sn,yue,Google,false
-sn,zh,Google,false
+sn,zh,Google,true
 sn,zu,Google,false
 so,af,Google,false
 so,am,Google,false
@@ -14398,7 +14398,7 @@ so,xh,Google,false
 so,yi,Google,false
 so,yo,Google,false
 so,yue,Google,false
-so,zh,Google,false
+so,zh,Google,true
 so,zu,Google,false
 sq,af,Google,false
 sq,am,Google,false
@@ -14532,7 +14532,7 @@ sq,xh,Google,false
 sq,yi,Google,false
 sq,yo,Google,false
 sq,yue,Google,false
-sq,zh,Google,false
+sq,zh,Google,true
 sq,zu,Google,false
 sr,af,Google,false
 sr,am,Google,false
@@ -14666,7 +14666,7 @@ sr,xh,Google,false
 sr,yi,Google,false
 sr,yo,Google,false
 sr,yue,Google,false
-sr,zh,Google,false
+sr,zh,Google,true
 sr,zu,Google,false
 st,af,Google,false
 st,am,Google,false
@@ -14800,7 +14800,7 @@ st,xh,Google,false
 st,yi,Google,false
 st,yo,Google,false
 st,yue,Google,false
-st,zh,Google,false
+st,zh,Google,true
 st,zu,Google,false
 su,af,Google,false
 su,am,Google,false
@@ -14934,7 +14934,7 @@ su,xh,Google,false
 su,yi,Google,false
 su,yo,Google,false
 su,yue,Google,false
-su,zh,Google,false
+su,zh,Google,true
 su,zu,Google,false
 sv,af,Google,false
 sv,am,Google,false
@@ -15068,7 +15068,7 @@ sv,xh,Google,false
 sv,yi,Google,false
 sv,yo,Google,false
 sv,yue,Google,false
-sv,zh,Google,false
+sv,zh,Google,true
 sv,zu,Google,false
 sw,af,Google,false
 sw,am,Google,false
@@ -15202,7 +15202,7 @@ sw,xh,Google,false
 sw,yi,Google,false
 sw,yo,Google,false
 sw,yue,Google,false
-sw,zh,Google,false
+sw,zh,Google,true
 sw,zu,Google,false
 ta,af,Google,false
 ta,am,Google,false
@@ -15336,7 +15336,7 @@ ta,xh,Google,false
 ta,yi,Google,false
 ta,yo,Google,false
 ta,yue,Google,false
-ta,zh,Google,false
+ta,zh,Google,true
 ta,zu,Google,false
 te,af,Google,false
 te,am,Google,false
@@ -15470,7 +15470,7 @@ te,xh,Google,false
 te,yi,Google,false
 te,yo,Google,false
 te,yue,Google,false
-te,zh,Google,false
+te,zh,Google,true
 te,zu,Google,false
 tg,af,Google,false
 tg,am,Google,false
@@ -15604,7 +15604,7 @@ tg,xh,Google,false
 tg,yi,Google,false
 tg,yo,Google,false
 tg,yue,Google,false
-tg,zh,Google,false
+tg,zh,Google,true
 tg,zu,Google,false
 th,af,Google,false
 th,am,Google,false
@@ -15738,7 +15738,7 @@ th,xh,Google,false
 th,yi,Google,false
 th,yo,Google,false
 th,yue,Google,false
-th,zh,Google,false
+th,zh,Google,true
 th,zu,Google,false
 ti,af,Google,false
 ti,am,Google,false
@@ -16140,7 +16140,7 @@ tl,xh,Google,false
 tl,yi,Google,false
 tl,yo,Google,false
 tl,yue,Google,false
-tl,zh,Google,false
+tl,zh,Google,true
 tl,zu,Google,false
 tr,af,Google,false
 tr,am,Google,false
@@ -16274,7 +16274,7 @@ tr,xh,Google,false
 tr,yi,Google,false
 tr,yo,Google,false
 tr,yue,Google,false
-tr,zh,Google,false
+tr,zh,Google,true
 tr,zu,Google,false
 ts,af,Google,false
 ts,am,Google,false
@@ -16944,7 +16944,7 @@ uk,xh,Google,false
 uk,yi,Google,false
 uk,yo,Google,false
 uk,yue,Google,false
-uk,zh,Google,false
+uk,zh,Google,true
 uk,zu,Google,false
 ur,af,Google,false
 ur,am,Google,false
@@ -17078,7 +17078,7 @@ ur,xh,Google,false
 ur,yi,Google,false
 ur,yo,Google,false
 ur,yue,Google,false
-ur,zh,Google,false
+ur,zh,Google,true
 ur,zu,Google,false
 uz,af,Google,false
 uz,am,Google,false
@@ -17212,7 +17212,7 @@ uz,xh,Google,false
 uz,yi,Google,false
 uz,yo,Google,false
 uz,yue,Google,false
-uz,zh,Google,false
+uz,zh,Google,true
 uz,zu,Google,false
 vi,af,Google,false
 vi,am,Google,false
@@ -17346,7 +17346,7 @@ vi,xh,Google,false
 vi,yi,Google,false
 vi,yo,Google,false
 vi,yue,Google,false
-vi,zh,Google,false
+vi,zh,Google,true
 vi,zu,Google,false
 wuu,af,Google,false
 wuu,am,Google,false
@@ -17748,7 +17748,7 @@ yi,wuu,Google,false
 yi,xh,Google,false
 yi,yo,Google,false
 yi,yue,Google,false
-yi,zh,Google,false
+yi,zh,Google,true
 yi,zu,Google,false
 yo,af,Google,false
 yo,am,Google,false
@@ -17882,7 +17882,7 @@ yo,wuu,Google,false
 yo,xh,Google,false
 yo,yi,Google,false
 yo,yue,Google,false
-yo,zh,Google,false
+yo,zh,Google,true
 yo,zu,Google,false
 yue,af,Google,false
 yue,am,Google,false
@@ -18285,7 +18285,7 @@ zu,xh,Google,false
 zu,yi,Google,false
 zu,yo,Google,false
 zu,yue,Google,false
-zu,zh,Google,false
+zu,zh,Google,true
 en,wuu,LingoCloud,false
 en,zh,LingoCloud,false
 ja,wuu,LingoCloud,false
@@ -20068,7 +20068,7 @@ en,af,Yandex,false
 en,am,Yandex,false
 en,ar,Yandex,false
 en,az,Yandex,false
-en,ba,Yandex,false
+en,ba,Yandex,true
 en,be,Yandex,false
 en,betarask,Yandex,false
 en,bn,Yandex,false
@@ -20263,7 +20263,7 @@ es,af,Yandex,false
 es,am,Yandex,false
 es,ar,Yandex,false
 es,az,Yandex,false
-es,ba,Yandex,false
+es,ba,Yandex,true
 es,be,Yandex,false
 es,betarask,Yandex,false
 es,bn,Yandex,false
@@ -20753,7 +20753,7 @@ fr,af,Yandex,false
 fr,am,Yandex,false
 fr,ar,Yandex,false
 fr,az,Yandex,false
-fr,ba,Yandex,false
+fr,ba,Yandex,true
 fr,be,Yandex,false
 fr,betarask,Yandex,false
 fr,bn,Yandex,false
@@ -25261,8 +25261,8 @@ ru,af,Yandex,false
 ru,am,Yandex,false
 ru,ar,Yandex,false
 ru,az,Yandex,false
-ru,ba,Yandex,false
-ru,be,Yandex,false
+ru,ba,Yandex,true
+ru,be,Yandex,true
 ru,betarask,Yandex,false
 ru,bn,Yandex,false
 ru,bg,Yandex,false
