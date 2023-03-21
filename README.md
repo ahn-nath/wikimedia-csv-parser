@@ -40,7 +40,7 @@ default translation engine for each pair of the last column in our generated CSV
 
 * Clone the repository
 
-  `git clone ahn-nath/wikimedia-csv-parser`
+  `git clone https://github.com/ahn-nath/wikimedia-cxserver-config-parser.git`
 * Install the requirements
 
   `pip install -r requirements.txt`
