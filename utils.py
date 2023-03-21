@@ -113,19 +113,28 @@ def compare_difference_between_all_files(target_file='mt_parse_without_defaults.
     # get the total number of lines in the target file
     total_count_target_file = len(open(target_file).readlines())
 
-    # iterate over each file in the directory
-    for file_name in os.listdir('compare_files'):
-        # skip the output file that we may add in a future version
-        if file_name == 'output_results.csv':
-            continue
+    # prepare the CSV file to write
+    with open('output_results.csv', 'a') as file:
+        writer = csv.writer(file)
+        writer.writerow(["target file", "second file", "number of differences", "percentage of closeness"])
 
-        # compare the differences between the files
-        count, resulting_different_lines = compare_differences_between_files(first_file=target_file,
-                                                                             second_file=f'compare_files/{file_name}')
+        # iterate over each file in the directory
+        for file_name in os.listdir('compare_files'):
+            # skip the output file
+            if file_name == 'output_results.csv':
+                continue
 
-        # show the percentage of closeness between the files
-        percentage = (total_count_target_file - count) / total_count_target_file * 100
-        print(f'The percentage of closeness between {target_file} and {file_name} is: {percentage}%')
+            # compare the differences between the files
+            count, resulting_different_lines = compare_differences_between_files(first_file=target_file,
+                                                                                 second_file=f'compare_files/{file_name}')
+
+            # show the percentage of closeness between the files
+            percentage = (total_count_target_file - count) / total_count_target_file * 100
+            print(f'The percentage of closeness between {target_file} and {file_name} is: {percentage}%')
+
+            # write the results in the output file with csv writer
+            writer.writerow([target_file, file_name, count, percentage]) # , resulting_different_lines])
+
 
 
 if __name__ == '__main__':
