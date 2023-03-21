@@ -14,16 +14,10 @@ DENY_LIST = ['{}/mt-defaults.wikimedia.yaml'.format(PATH), '{}/MWPageLoader.yaml
 
 def get_preferred_engines(file_path='{}/mt-defaults.wikimedia.yaml'.format(PATH), debug=False):
     """
-
         Get the preferred engines from the mt-defaults.wikimedia.yaml file and saves them in a list.
         It uses pickling to use available files when already processed and save memory.
 
-        The output would look like this:
-         {'af-nl': 'Apertium', 'ar-mt': 'Apertium', 'be-ru': 'Apertium', 'bg-mk': 'Apertium'...}
-
-
         :return: a dictionary with the preferred engines
-
     """
     # check if file exists
     try:
@@ -44,6 +38,49 @@ def get_preferred_engines(file_path='{}/mt-defaults.wikimedia.yaml'.format(PATH)
             pickle.dump(preferred_engines_data, file)
 
     return preferred_engines_data
+
+
+# parse the CSV file depending on the type of file (standard format or not)
+def parse_csv(engine, standard, lines):
+    """
+        It parses the CSV file and returns a dictionary with the source and target languages as keys and the engine as value.
+
+        :param engine:
+        :param standard:
+        :param lines:
+        :return:
+    """
+    cvs_pairs_dict = {}
+
+    # if standard input
+    if standard:
+        # iterate over each source (dictionary key) and their values
+        for source in lines:
+            # for each target (dictionary value) in array of source, add pair
+            for target in lines[source]:
+                cvs_pairs_dict["{}:{}".format(source, target)] = engine
+    else:
+        # remove special characters and save all languages to list
+        languages = lines["languages"]
+        # restrictions
+        english_variants = ['en', 'simple']
+        not_as_target = []
+
+        # iterate over each language and get the source and target languages
+        for lang in languages:
+            # if lang is "False", replace with "no".
+            # NOTE: the YAML library converts "no" to False for some strange reason
+            lang = 'no' if not lang else lang
+            for target in languages:
+                # if target is "False", replace with "no".
+                target = 'no' if not target else target
+                # if the target language is not the source, and it's not in the not_as_target list,
+                if (lang != target) and (target not in not_as_target):
+                    # and it's not an english variant
+                    if lang not in english_variants or target not in english_variants:
+                        cvs_pairs_dict["{}:{}".format(lang, target)] = engine
+
+    return cvs_pairs_dict
 
 
 # generate the CSV file
@@ -67,37 +104,11 @@ def generate_csv(preferred_engines, output_file_name='output_files/cx_server_par
                 lines = yaml.safe_load(file)
 
                 # get the translation engine used
-                cvs_pairs_dict = {}
                 engine = re.split("\W+", file.name)[1]
                 standard = False if "languages" in lines else True
 
-                # if standard input
-                if standard:
-                    # iterate over each source (dictionary key) and their values
-                    for source in lines:
-                        # for each target (dictionary value) in array of source, add pair
-                        for target in lines[source]:
-                            cvs_pairs_dict["{}:{}".format(source, target)] = engine
-                else:
-                    # remove special characters and save all languages to list
-                    languages = lines["languages"]
-                    # restrictions
-                    english_variants = ['en', 'simple']
-                    not_as_target = []
-
-                    # iterate over each language and get the source and target languages
-                    for lang in languages:
-                        # if lang is "False", replace with "no".
-                        # NOTE: the YAML library converts "no" to False for some strange reason
-                        lang = 'no' if not lang else lang
-                        for target in languages:
-                            # if target is "False", replace with "no".
-                            target = 'no' if not target else target
-                            # if the target language is not the source, and it's not in the not_as_target list,
-                            if (lang != target) and (target not in not_as_target):
-                                # and it's not an english variant
-                                if lang not in english_variants or target not in english_variants:
-                                    cvs_pairs_dict["{}:{}".format(lang, target)] = engine
+                # parse the CSV file
+                cvs_pairs_dict = parse_csv(engine, standard, lines)
 
                 # iterate over dictionary after getting source and target pairs and handle cases to create a CSV string
                 for key, value in cvs_pairs_dict.items():
