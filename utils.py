@@ -96,21 +96,51 @@ def compare_differences_between_files(first_file='mt_parse_without_defaults.csv'
 
     # read generated file and print it
     with open('update.csv', 'r') as file:
+        resulting_different_lines = file.read()
         print(f' The total number of differences between {first_file} and {second_file} was: {count}')
-        print(file.read())
+        print(resulting_different_lines)
+
+    return count, resulting_different_lines
+
+
+def compare_difference_between_all_files(target_file='mt_parse_without_defaults.csv'):
+    """
+        This function compares the differences between all the files in the compare_files directory and
+        the mt_parse_without_defaults.csv file.
+
+        :return: void
+    """
+    # get the total number of lines in the target file
+    total_count_target_file = len(open(target_file).readlines())
+
+    # iterate over each file in the directory
+    for file_name in os.listdir('compare_files'):
+        # skip the output file that we may add in a future version
+        if file_name == 'output_results.csv':
+            continue
+
+        # compare the differences between the files
+        count, resulting_different_lines = compare_differences_between_files(first_file=target_file,
+                                                                             second_file=f'compare_files/{file_name}')
+
+        # show the percentage of closeness between the files
+        percentage = (total_count_target_file - count) / total_count_target_file * 100
+        print(f'The percentage of closeness between {target_file} and {file_name} is: {percentage}%')
 
 
 if __name__ == '__main__':
+    # convert the JSON file to CSV. Disable if necessary
+    need_to_transform_json_to_csv = False
+    if need_to_transform_json_to_csv:
+        # should not ignore defaults
+        convert_JSON_file_to_CSV()
+        # should ignore defaults
+        convert_JSON_file_to_CSV(should_ignore_defaults=True)
     '''
-    # should not ignore defaults
-    out = convert_JSON_file_to_CSV()
-    print(out)
-    # should ignore defaults
-    out = convert_JSON_file_to_CSV(should_ignore_defaults=True)
-    print(out)
-    '''
-
     # compare the differences between the files
     compare_differences_between_files()
     compare_differences_between_files(first_file='mt_parse.csv', second_file='compare_files/cx_server_parsed.csv')
+    '''
 
+    # compare the differences between all the files in the compare_files directory and the target file
+    compare_difference_between_all_files(target_file='mt_parse_without_defaults.csv')
