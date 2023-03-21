@@ -1,0 +1,116 @@
+import csv
+import json
+import os
+import traceback
+
+from main import get_preferred_engines, parse_csv
+
+
+def convert_JSON_file_to_CSV(output_file_name='mt_parse', source_file_path='config_files/mt.json',
+                             should_ignore_defaults=False):
+    """
+        It converts the JSON file to a CSV file. It uses the main.py functions to parse the JSON file and
+        get the preferred engines.
+
+        :param should_ignore_defaults:
+        :param output_file_name: the name of the output file
+        :param source_file_path: the path of the source file
+        :return: a string with the result of the operation
+    """
+    try:
+        # get preferred engines
+        preferred_engines = get_preferred_engines()
+        should_ignore_defaults_str = "_without_defaults" if should_ignore_defaults else ""
+
+        # prepare the CSV file to write
+        with open(f'{output_file_name}{should_ignore_defaults_str}.csv', 'w') as file_output:
+            writer = csv.writer(file_output)
+            writer.writerow(
+                ["source language", "target language", "translation engine", "is preferred engine?"])
+
+            # iterate over each file in the directory
+            with open(f'{source_file_path}') as file:
+                engine_lines = json.load(file)
+
+                for engine in engine_lines:
+
+                    if should_ignore_defaults and engine == 'defaults':
+                        continue
+
+                    # get the translation engine used
+                    standard = True
+                    lines = engine_lines[engine]
+
+                    # parse the CSV file
+                    cvs_pairs_dict = parse_csv(engine, standard, lines)
+
+                    for key, value in cvs_pairs_dict.items():
+                        # get source and target languages, check if the value or engine is the preferred to
+                        # construct
+                        source, target = key.split(':', 2)
+                        engine = value
+                        # we will mark as true if the engine is the preferred one in the preferred_engines
+                        # dictionary
+                        is_preferred = 'true' if preferred_engines.get(f'{source}-{target}') == engine else 'false'
+                        # add the line to the CSV file
+                        writer.writerow([source, target, engine, is_preferred])
+
+        return "We have parsed the documents and generated the CSV file!"
+
+    except Exception as e:
+        # print error trace
+        print(traceback.format_exc())
+        print(e)
+
+        return "Something went wrong. Please check the logs."
+
+
+def compare_differences_between_files(first_file='mt_parse_without_defaults.csv',
+                                      second_file='compare_files/cx_server_parsed.csv'):
+    """
+        This function compares the differences between the files mt_parse_without_defaults.csv and cx_server_parsed.csv
+        and prints the differences in the update.csv file.
+
+        :return: void
+        :reference: https://stackoverflow.com/questions/38996033/python-compare-two-csv-files-and-print-out-differences
+        :notes:
+        - part of the extract is referenced from the above link
+        - the csv-diff command is used to compare the files in the terminal
+            Example: csv-diff mt_parse_without_defaults.csv output_files/cx_server_parsed.csv
+        - alternatively, one may use pandas to compare the files with the merge function
+    """
+    # read the files
+    with open(first_file, 'r') as t1, open(second_file, 'r') as t2:
+        file1 = t1.readlines()
+        file2 = t2.readlines()
+
+    # compare the files and write the differences in the update.csv file
+    print(f'Comparing the number of differences between {first_file} and {second_file} ...')
+    # count the number of differences
+    count = 0
+    with open('update.csv', 'w') as outFile:
+        for line in file1:
+            if line not in file2:
+                count += 1
+                outFile.write(line)
+
+    # read generated file and print it
+    with open('update.csv', 'r') as file:
+        print(f' The total number of differences between {first_file} and {second_file} was: {count}')
+        print(file.read())
+
+
+if __name__ == '__main__':
+    '''
+    # should not ignore defaults
+    out = convert_JSON_file_to_CSV()
+    print(out)
+    # should ignore defaults
+    out = convert_JSON_file_to_CSV(should_ignore_defaults=True)
+    print(out)
+    '''
+
+    # compare the differences between the files
+    compare_differences_between_files()
+    compare_differences_between_files(first_file='mt_parse.csv', second_file='compare_files/cx_server_parsed.csv')
+

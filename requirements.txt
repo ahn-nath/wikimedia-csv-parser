@@ -1,1 +1,2 @@
 PyYAML~=6.0
+csv-diff~=1.0
