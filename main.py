@@ -9,7 +9,7 @@ PATH = 'config_files'
 DENY_LIST = ['{}/mt-defaults.wikimedia.yaml'.format(PATH), '{}/MWPageLoader.yaml'.format(PATH),
              '{}/languages.yaml'.format(PATH),
              '{}/JsonDict.yaml'.format(PATH), '{}/Dictd.yaml'.format(PATH), '{}/transform.js'.format(PATH),
-             'test_files/mt-defaults.wikimedia_test.yaml', 'test_files/expected_output_test.csv']
+             'test_files/mt-defaults.wikimedia_test.yaml', 'test_files/expected_output_test.csv', 'mt.json']
 
 
 def get_preferred_engines(file_path='{}/mt-defaults.wikimedia.yaml'.format(PATH), debug=False):
@@ -93,39 +93,43 @@ def generate_csv(preferred_engines, output_file_name='output_files/cx_server_par
         :parameter: preferred_engines: a dictionary with the preferred engines
 
     """
-    # parse each file
-    # list for the lines of the CSV file
-    csv_strings = ["source language,target language,translation engine,is preferred engine?"]
+    try:
+        # prepare the CSV file to write
+        with open(output_file_name, 'w') as file_output:
+            writer = csv.writer(file_output)
+            writer.writerow(
+                ["source language", "target language", "translation engine", "is preferred engine?"])
 
-    # prepare the CSV file to write
-    with open(output_file_name, 'w') as file_output:
-        writer = csv.writer(file_output)
-        writer.writerow(
-            ["source language", "target language", "translation engine", "is preferred engine?"])
+            # iterate over each file in the directory
+            for f in os.listdir(source_file_path):
+                # parse file
+                with open(f'{source_file_path}/{f}') as file:
+                    if file.name not in DENY_LIST:
+                        lines = yaml.safe_load(file)
 
-        # iterate over each file in the directory
-        for f in os.listdir(source_file_path):
-            # parse file
-            with open(f'{source_file_path}/{f}') as file:
-                if file.name not in DENY_LIST:
-                    lines = yaml.safe_load(file)
+                        # get the translation engine used
+                        engine = os.path.splitext(f)[0]
+                        standard = False if "languages" in lines else True
 
-                    # get the translation engine used
-                    engine = os.path.splitext(f)[0]
-                    standard = False if "languages" in lines else True
+                        # parse the CSV file
+                        cvs_pairs_dict = parse_csv(engine, standard, lines)
 
-                    # parse the CSV file
-                    cvs_pairs_dict = parse_csv(engine, standard, lines)
+                        for key, value in cvs_pairs_dict.items():
+                            # get source and target languages, check if the value or engine is the preferred to
+                            # construct
+                            source, target = key.split(':', 2)
+                            engine = value
+                            # we will mark as true if the engine is the preferred one in the preferred_engines
+                            # dictionary
+                            is_preferred = 'true' if preferred_engines.get(f'{source}-{target}') == engine else 'false'
+                            # add the line to the CSV file
+                            writer.writerow([source, target, engine, is_preferred])
 
-                    for key, value in cvs_pairs_dict.items():
-                        # get source and target languages, check if the value or engine is the preferred to construct
-                        source, target = key.split(':', 2)
-                        engine = value
-                        # we will mark as true if the engine is the preferred one in the preferred_engines dictionary
-                        is_preferred = 'true' if preferred_engines.get(f'{source}-{target}') == engine else 'false'
-                        # add the line to the CSV file
-                        writer.writerow([source, target, engine, is_preferred])
-    return csv_strings
+        return "We have parsed the documents and generated the CSV file!"
+
+    except Exception as e:
+        print(e)
+        return "Something went wrong. Please check the logs."
 
 
 if __name__ == '__main__':
@@ -133,3 +137,4 @@ if __name__ == '__main__':
     preferred_engines_out = get_preferred_engines()
     # generate the CSV file
     csv_strings_out = generate_csv(preferred_engines_out)
+    print(csv_strings_out)
