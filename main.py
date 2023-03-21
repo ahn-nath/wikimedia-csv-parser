@@ -2,7 +2,6 @@
 import os
 import pickle
 import yaml
-import re
 
 # define constants
 PATH = 'config_files'
@@ -104,7 +103,7 @@ def generate_csv(preferred_engines, output_file_name='output_files/cx_server_par
                 lines = yaml.safe_load(file)
 
                 # get the translation engine used
-                engine = re.split("\W+", file.name)[1]
+                engine = os.path.splitext(f)[0]
                 standard = False if "languages" in lines else True
 
                 # parse the CSV file
