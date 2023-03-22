@@ -9,7 +9,7 @@ PATH = 'config_files'
 DENY_LIST = ['{}/mt-defaults.wikimedia.yaml'.format(PATH), '{}/MWPageLoader.yaml'.format(PATH),
              '{}/languages.yaml'.format(PATH),
              '{}/JsonDict.yaml'.format(PATH), '{}/Dictd.yaml'.format(PATH), '{}/transform.js'.format(PATH),
-             'test_files/mt-defaults.wikimedia_test.yaml', 'test_files/expected_output_test.csv', 'mt.json']
+             'test_files/mt-defaults.wikimedia_test.yaml', 'test_files/expected_output_test.csv', '{}/mt.json'.format(PATH)]
 
 
 def get_preferred_engines(file_path='{}/mt-defaults.wikimedia.yaml'.format(PATH), debug=False):
