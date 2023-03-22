@@ -112,7 +112,7 @@ def compare_differences_between_files(first_file='mt_parse.csv',
     """
     # read the files
     with open(first_file, 'r') as t1, open(second_file, 'r') as t2:
-        file1 = t1.readlines()
+        file1 = t1.readlines()[1:]
         file2 = t2.readlines()
 
     # compare the files and write the differences in the update.csv file
@@ -191,5 +191,5 @@ if __name__ == '__main__':
                                                                            '/leilakaltouma_langs.csv')
 
     # compare the differences between all the files in the compare_files directory and the target file
-    # compare_difference_between_all_files(target_file='mt_parse.csv')
+    compare_difference_between_all_files(target_file='mt_parse.csv')
 
