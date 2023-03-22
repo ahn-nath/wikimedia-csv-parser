@@ -175,7 +175,7 @@ if __name__ == '__main__':
     # convert the JSON file to CSV. Disable if necessary
     need_to_transform_json_to_csv = False
     should_normalize_files = False
-    should_compare_specific_files = True
+    should_compare_specific_files = False
 
     # convert the API result JSON file to CSV
     if need_to_transform_json_to_csv:
