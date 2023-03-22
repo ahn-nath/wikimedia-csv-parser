@@ -1,0 +1,7 @@
+target file,second file,number of differences,percentage of closeness
+mt_parse_without_defaults.csv,12Daisy_supported_language_pairs.csv,55855,0.3514593591664883
+mt_parse_without_defaults.csv,Abhishek02bhardwaj_supported_pairs.csv,28295,49.520088489259976
+mt_parse_without_defaults.csv,ahn-nath_cx_server_parsed.csv,0,100.0
+mt_parse_without_defaults.csv,akanshjais_supported_language_pairs.csv,55855,0.3514593591664883
+mt_parse_without_defaults.csv,anshikabhatt_supported_pairs.csv,28295,49.520088489259976
+mt_parse_without_defaults.csv,leilakaltouma_langs.csv,28027,49.99821594233926
