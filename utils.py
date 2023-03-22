@@ -6,8 +6,7 @@ import traceback
 from main import get_preferred_engines, parse_csv
 
 
-def convert_JSON_file_to_CSV(output_file_name='mt_parse', source_file_path='config_files/mt.json',
-                             should_ignore_defaults=False):
+def convert_JSON_file_to_CSV(output_file_name='mt_parse', source_file_path='config_files/mt.json'):
     """
         It converts the JSON file to a CSV file. It uses the main.py functions to parse the JSON file and
         get the preferred engines.
@@ -20,10 +19,9 @@ def convert_JSON_file_to_CSV(output_file_name='mt_parse', source_file_path='conf
     try:
         # get preferred engines
         preferred_engines = get_preferred_engines()
-        should_ignore_defaults_str = "_without_defaults" if should_ignore_defaults else ""
 
         # prepare the CSV file to write
-        with open(f'{output_file_name}{should_ignore_defaults_str}.csv', 'w') as file_output:
+        with open(f'{output_file_name}.csv', 'w') as file_output:
             writer = csv.writer(file_output)
             writer.writerow(
                 ["source language", "target language", "translation engine", "is preferred engine?"])
@@ -34,7 +32,8 @@ def convert_JSON_file_to_CSV(output_file_name='mt_parse', source_file_path='conf
 
                 for engine in engine_lines:
 
-                    if should_ignore_defaults and engine == 'defaults':
+                    # we ignore the default because they indicate the preferred engine for each language pair
+                    if engine == 'defaults':
                         continue
 
                     # get the translation engine used
@@ -97,7 +96,7 @@ def normalize_files_turn_True_and_False_uppercase(file_name):
         return "Something went wrong. Please check the logs."
 
 
-def compare_differences_between_files(first_file='mt_parse_without_defaults.csv',
+def compare_differences_between_files(first_file='mt_parse.csv',
                                       second_file='compare_files/ahn-nath_cx_server_parsed.csv', show_specifics=False):
     """
         This function compares the differences between the files mt_parse_without_defaults.csv and cx_server_parsed.csv
@@ -122,7 +121,8 @@ def compare_differences_between_files(first_file='mt_parse_without_defaults.csv'
     count = 0
     with open('update.csv', 'w') as outFile:
         for line in file1:
-            if line not in file2:
+            # we ignore the new line character because some csv files add it and some don't
+            if (line not in file2) and (line != '\n'):
                 count += 1
                 outFile.write(line)
 
@@ -137,7 +137,7 @@ def compare_differences_between_files(first_file='mt_parse_without_defaults.csv'
     return count, resulting_different_lines
 
 
-def compare_difference_between_all_files(target_file='mt_parse_without_defaults.csv'):
+def compare_difference_between_all_files(target_file='mt_parse.csv', output_file_name='output_results.csv'):
     """
         This function compares the differences between all the files in the compare_files directory and
         the mt_parse_without_defaults.csv file.
@@ -148,7 +148,7 @@ def compare_difference_between_all_files(target_file='mt_parse_without_defaults.
     total_count_target_file = len(open(target_file).readlines())
 
     # prepare the CSV file to write
-    with open('compare_files/output_results.csv', 'a') as file:
+    with open(f'compare_files/{output_file_name}', 'w') as file:
         writer = csv.writer(file)
         writer.writerow(["target file", "second file", "number of differences", "percentage of closeness"])
 
@@ -175,20 +175,21 @@ if __name__ == '__main__':
     # convert the JSON file to CSV. Disable if necessary
     need_to_transform_json_to_csv = False
     should_normalize_files = False
-    should_compare_specific_files = False
-    if need_to_transform_json_to_csv:
-        # should not ignore defaults
-        convert_JSON_file_to_CSV()
-        # should ignore defaults
-        convert_JSON_file_to_CSV(should_ignore_defaults=True)
+    should_compare_specific_files = True
 
+    # convert the API result JSON file to CSV
+    if need_to_transform_json_to_csv:
+        convert_JSON_file_to_CSV()
+
+    # normalized specific files: we are normalizing the minority because the rest uses True and False (uppercase)
     if should_normalize_files:
-        # normalized specific files: we are normalizing the minority because the rest uses True and False (uppercase)
         normalize_files_turn_True_and_False_uppercase('compare_files/leilakaltouma_langs.csv')
 
+    # compare the differences between  specific files
     if should_compare_specific_files:
-        # compare the differences between  specific files
-        compare_differences_between_files(show_specifics=True)
+        compare_differences_between_files(show_specifics=True, second_file='compare_files'
+                                                                           '/leilakaltouma_langs.csv')
 
     # compare the differences between all the files in the compare_files directory and the target file
-    # compare_difference_between_all_files(target_file='mt_parse_without_defaults.csv')
+    # compare_difference_between_all_files(target_file='mt_parse.csv')
+
