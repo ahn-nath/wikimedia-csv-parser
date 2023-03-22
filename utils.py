@@ -148,7 +148,7 @@ def compare_difference_between_all_files(target_file='mt_parse_without_defaults.
     total_count_target_file = len(open(target_file).readlines())
 
     # prepare the CSV file to write
-    with open('output_results.csv', 'a') as file:
+    with open('compare_files/output_results.csv', 'a') as file:
         writer = csv.writer(file)
         writer.writerow(["target file", "second file", "number of differences", "percentage of closeness"])
 
