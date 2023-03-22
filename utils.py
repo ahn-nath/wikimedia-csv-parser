@@ -172,7 +172,7 @@ def compare_difference_between_all_files(target_file='mt_parse.csv', output_file
 
 
 if __name__ == '__main__':
-    # convert the JSON file to CSV. Disable if necessary
+    # 'activate' these flags as you see fit before running the code
     need_to_transform_json_to_csv = False
     should_normalize_files = False
     should_compare_specific_files = False
