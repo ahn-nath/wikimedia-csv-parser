@@ -121,7 +121,7 @@ def generate_csv(preferred_engines, output_file_name='output_files/cx_server_par
                             engine = value
                             # we will mark as true if the engine is the preferred one in the preferred_engines
                             # dictionary
-                            is_preferred = 'true' if preferred_engines.get(f'{source}-{target}') == engine else 'false'
+                            is_preferred = 'True' if preferred_engines.get(f'{source}-{target}') == engine else 'False'
                             # add the line to the CSV file
                             writer.writerow([source, target, engine, is_preferred])
 
