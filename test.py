@@ -21,15 +21,15 @@ class TestMain(unittest.TestCase):
     # test the get preferred engines function with the default file
     def test_get_preferred_engines(self):
         """
-            Test the get_preferred_engines function from the main.py file that, given an input file, returns a dictionary with the
-            preferred engines for each language pair
+            Test the get_preferred_engines function from the main.py file that, given an input file, returns a
+            dictionary with the preferred engines for each language pair
         """
         expected_output = PREFERED_ENGINES
         actual_output = main.get_preferred_engines(file_path='test_files/mt-defaults.wikimedia_test.yaml', debug=True)
 
         self.assertEqual(expected_output, actual_output)
 
-    # test the generate csv file function with standard input
+    # test to generate csv file function with standard input
     def test_generate_csv_standard(self):
         """
             Test the generate_csv function from the main.py file that, given a dictionary with the preferred engines,

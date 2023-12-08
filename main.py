@@ -22,6 +22,7 @@ def get_preferred_engines(file_path='{}/mt-defaults.wikimedia.yaml'.format(PATH)
     # check if file exists
     try:
         if debug:
+            # when it is testing, or debugging manually, we want to create the file from scratch
             raise FileNotFoundError
 
         with open('preferred_engines.pickle', 'rb') as file:
@@ -43,11 +44,12 @@ def get_preferred_engines(file_path='{}/mt-defaults.wikimedia.yaml'.format(PATH)
 # parse the CSV file depending on the type of file (standard format or not)
 def parse_csv(engine, standard, lines):
     """
-        It parses the CSV file and returns a dictionary with the source and target languages as keys and the engine as value.
+        It parses the CSV file and returns a dictionary with the source and target languages as keys and the engine as
+        value.
 
-        :param engine:
-        :param standard:
-        :param lines:
+        :param engine: the engine corresponding to the pair.
+        :param standard: used to determine is the file structure is standard of not.
+        :param lines: the content as an array of strings.
         :return:
     """
     cvs_pairs_dict = {}
@@ -87,7 +89,7 @@ def parse_csv(engine, standard, lines):
 def generate_csv(preferred_engines, output_file_name='output_files/cx_server_parsed.csv', source_file_path=PATH):
     """
         It parses specific files and generates a CSV file with the data that at least includes the source language,
-        the target language, the translation engine used, and whether or not the translation engine is preferred or not
+        the target language, the translation engine used, and whether the translation engine is preferred or not
 
         :return: cvs strings generated for the cx_server_parsed.csv file
         :parameter: preferred_engines: a dictionary with the preferred engines

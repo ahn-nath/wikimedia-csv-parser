@@ -11,7 +11,6 @@ def convert_JSON_file_to_CSV(output_file_name='mt_parse', source_file_path='conf
         It converts the JSON file to a CSV file. It uses the main.py functions to parse the JSON file and
         get the preferred engines.
 
-        :param should_ignore_defaults:
         :param output_file_name: the name of the output file
         :param source_file_path: the path of the source file
         :return: a string with the result of the operation
@@ -68,7 +67,7 @@ def normalize_files_turn_True_and_False_uppercase(file_name):
     """
         This function normalizes the files by turning the True and False values to lowercase, because this is
         crucial for the comparison between the files. Since True and False are not the same as true and false
-        syntatically, but they are the same semantically, it is not appropriate to compare them as they are nor to
+        syntactically, but they are the same semantically, it is not appropriate to compare them as they are nor to
         count them as differences.
 
         :param file_name: the name of the file to normalize
